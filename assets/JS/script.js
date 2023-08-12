@@ -1,1 +1,1 @@
-console.log("script chal rahi hai.");
+console.log("script is working.");
