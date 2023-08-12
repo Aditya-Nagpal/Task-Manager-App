@@ -1,9 +1,177 @@
-body{
+:root{
+    --form-border-color: lightgrey;
+  }
+  
+  body{
     margin: 0;
-    background-color: blue;
-}
-
-h1{
-    border: 1px solid black;
+  }
+  
+  main{
+    width: 64vw;
+    border: 1px solid var(--form-border-color);
+    margin: auto;
+  }
+  
+  h1{
     text-align: center;
-}
+    font-size: 2.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(116, 111, 111);
+    margin: 5px 0;
+  }
+  
+  #task-form{
+    font-size: 0;
+  }
+  
+  #task-form div{
+    height: 82px;
+    border-top: 1px solid var(--form-border-color);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    font-family: sans-serif;
+    display: inline-block;
+  }
+  
+  #desc{
+    width: 100%;
+  }
+  
+  #desc .form-input::placeholder {
+    color: rgb(199, 197, 197);
+  }
+  
+  #desc ~ div{
+    border-bottom: 1px solid var(--form-border-color);
+  }
+  
+  #cate{
+    width: 50%;
+    border-right: 1px solid var(--form-border-color);
+  }
+  
+  #date{
+    width: 50%;
+    vertical-align: top;
+  }
+  
+  .form-heading{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .form-input{
+    width: -webkit-fill-available;
+    padding: 6px 0;
+    font-size: 1.2rem;
+    border: none;
+  }
+  
+  .form-input:focus{
+    outline: none;
+  }
+  
+  #btn{
+    height: 127px !important;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn{
+    height: 68px;
+    width: 200px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    font-size: 1.17rem;
+    display: flex;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    background-color: rgb(176, 172, 172) !important;
+  }
+  
+  .btn > *{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  .btn i{
+    width: 25%;
+    font-size: 1.9rem;
+  }
+  
+  .btn p{
+    width: 70%;
+  }
+  
+  #list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task{
+    height: 93px;
+    width: -webkit-fill-available;
+    border-top: 1px solid var(--form-border-color);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .task input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    margin: 6.5px;
+  }
+  
+  .task label{
+    margin-left: 20px;
+    vertical-align: top;
+    font-weight: 600;
+  }
+  
+  .task-title{
+    display: inline-block;
+  }
+  
+  .task-title p{
+    margin: 0;
+  }
+  
+  .task-title p:first-child{
+    color: rgb(123, 123, 116);
+    font-size: 1.35rem;
+    margin-bottom: 5px;
+  }
+  
+  .task-title p:nth-child(2){
+    font-size: 1.2rem;
+    color: rgb(190, 186, 186);
+  }
+  
+  .cate-card{
+    height: 40px;
+    width: 70px;
+    background-color: orange;
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    float: right;
+  }

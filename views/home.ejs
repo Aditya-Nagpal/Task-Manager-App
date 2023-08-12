@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../assets/CSS/style.css">
-    <title>
-        <%= title %>
-    </title>
-</head>
-<body>
-    <h1>
-        Todo List
-    </h1>
+  <head>
+    <script src="https://kit.fontawesome.com/50d3f01cf7.js" crossorigin="anonymous"></script>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/assets/CSS/style.css" />
+  </head>
 
-    <script type="text/javascript" src="../assets/JS/script.js"></script>
-</body>
+  <body>
+    <main>
+      <h1>TODO App</h1>
+      <form id="task-form">
+        <div id="desc">
+          <label class="form-heading" for="description">Description</label><br>
+          <input class="form-input" type="text" required name="description" placeholder="What do you need to do?">
+        </div>
+        <div id="cate">
+          <label class="form-heading" for="category">category</label><br>
+          <select class="form-input" required name="category">
+            <option disabled selected hidden>Choose a category</option>
+            <option>Personal</option>
+            <option>Work</option>
+            <option>School</option>
+            <option>Cleaning</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div id="date">
+          <label class="form-heading" for="date">due date</label><br>
+          <input class="form-input" type="text" required name="date" placeholder="DD/MM/YYYY" onfocus="(this.type='date')" onblur="(this.type='text')">
+        </div>
+        <div id="btn" style="border: none;">
+          <button class="btn" style="padding: 0; background-color: rgb(50, 48, 58);">
+            <i class="fa-solid fa-plus"></i>
+            <p>add task</p>
+          </button>
+          <button class="btn" style="padding: 0;  background-color: red;">
+            <i class="fa-solid fa-trash-can"></i>
+            <p>delete tasks</p>
+          </button>
+        </div>
+      </form>
+      <ul id="list">
+        <li class="task">
+          <input type="checkbox" name="check">
+          <label for="check">
+            <div class="task-title">
+              <p>Why not add a task?</p>
+              <p><i class="fa-regular fa-calendar-days"></i>&emsp;june 12, 2023</p>
+            </div>
+          </label>
+          <div class="cate-card">Personal</div>
+        </li>
+        <li class="task">
+        </li>
+        <li class="task">
+        </li>
+      </ul>
+    </main>
+
+    <script src="/assets/JS/script.js"></script>
+  </body>
 </html>
