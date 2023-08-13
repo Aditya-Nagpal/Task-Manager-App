@@ -113,6 +113,10 @@
   .btn p{
     width: 70%;
   }
+
+  .btn:nth-child(2) a{
+    text-decoration: none;
+  }
   
   #list{
     list-style-type: none;
