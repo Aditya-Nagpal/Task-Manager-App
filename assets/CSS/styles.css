@@ -1,6 +1,5 @@
 :root{
     --form-border-color: lightgrey;
-    --bg-color: white;
   }
   
   body{
@@ -72,7 +71,6 @@
   
   .form-input:focus{
     outline: none;
-    background-color: var(--bg-color);
   }
   
   #btn{

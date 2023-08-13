@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <script src="https://kit.fontawesome.com/50d3f01cf7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="/CSS/styles.css">
-    <title><%= title %></title>
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/styles.css" />
   </head>
 
   <body>
     <main>
       <h1>TODO App</h1>
-      <form id="add-form" action="/create-task" method="POST">
+
+      <form id="task-form" action="/add-task" method="POST">
         <div id="desc">
           <label class="form-heading" for="description">Description</label><br>
-          <input class="form-input" type="text" required name="description" placeholder="What do you need to do?">
+          <input class="form-input" type="text" required name="des" placeholder="What do you need to do?">
         </div>
         <div id="cate">
           <label class="form-heading" for="category">category</label><br>
@@ -34,14 +35,13 @@
             <i class="fa-solid fa-plus"></i>
             <p>add task</p>
           </button>
-          <button type="button" class="btn" style="padding: 0;  background-color: red;">
-            <a style="width: 100%;" href="/delete-contact/?id=<%= %>">
-              <i class="fa-solid fa-trash-can"></i>
-              <p>delete tasks</p>
-            </a>
+          <button class="btn" style="padding: 0;  background-color: red;">
+            <i class="fa-solid fa-trash-can"></i>
+            <p>delete tasks</p>
           </button>
         </div>
       </form>
+
       <ul id="list">
         <li class="task">
           <input type="checkbox" name="check">
@@ -53,9 +53,21 @@
           </label>
           <!-- <div class="cate-card">Personal</div> -->
         </li>
+        <% for(let task of task_list){ %>
+          <li class="task">
+            <input type="checkbox" name="check">
+            <label for="check">
+              <div class="task-title">
+                <p><%= task.description %></p>
+                <p><i class="fa-regular fa-calendar-days"></i>&emsp;june 12, 2023</p>
+              </div>
+            </label>
+            <div class="cate-card"><%= task.category %></div>
+          </li>
+        <% } %>
       </ul>
     </main>
 
-    <script type="text/javascript" src="/JS/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

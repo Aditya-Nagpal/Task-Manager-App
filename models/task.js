@@ -7,11 +7,11 @@ const taskSchema=new mongoose.Schema({
     categ: {
         type: String,
         required: true
-    },
-    date: {
-        type: Date,
-        required: true
     }
+    // date: {
+    //     type: Date,
+    //     required: true
+    // }
 });
 
 const Task=mongoose.model('Task',taskSchema);
