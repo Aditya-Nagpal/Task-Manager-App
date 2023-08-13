@@ -35,12 +35,12 @@
             <i class="fa-solid fa-plus"></i>
             <p>add task</p>
           </button>
-          <!-- <button class="btn" disabled style="padding: 0;  background-color: red;">
+          <button class="btn" disabled style="padding: 0;  background-color: red;">
             <a href="/delete-task" style="width: 100%;">
               <i class="fa-solid fa-trash-can"></i>
               <p>delete tasks</p>
             </a>
-          </button> -->
+          </button>
         </div>
       </form>
 
@@ -57,19 +57,22 @@
         </li>
         <% for(let task of task_list){ %>
           <li class="task">
-            <input type="checkbox" name="<%= task.category %>" id="<%= task.description%>">
-            <label for="<%= task.category %>">
+            <input type="checkbox" name="check">
+            <label for="check">
               <div class="task-title">
                 <p><%= task.description %></p>
-                <p><i class="fa-regular fa-calendar-days"></i>&emsp;june 12, 2023</p>
+                <p><i class="fa-regular fa-calendar-days"></i>&emsp;<%= month[task.date.getMonth()] %> <%= task.date.getDate() %>, <%=  task.date.getFullYear()  %></p>
               </div>
             </label>
-            <div class="cate-card"><%= task.category %></div>
+            <div class="cate-card" style="background-color: <%= btncolor[task.category] %>;"><%= task.category %></div>
           </li>
         <% } %>
       </ul>
     </main>
 
     <script src="script.js"></script>
+    <script type="text/javascript">
+      const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    </script>
   </body>
 </html>

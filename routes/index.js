@@ -5,5 +5,5 @@ const homeController=require('../controllers/home_controller');
 
 router.get('/',homeController.home);
 router.post('/add-task',require('./form'));
-router.use('/delete-task',require('./delete'));
+router.get('/delete-task',require('./delete'));
 module.exports=router;
