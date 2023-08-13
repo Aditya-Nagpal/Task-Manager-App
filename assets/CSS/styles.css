@@ -133,6 +133,7 @@
     height: 20px;
     width: 20px;
     margin: 6.5px;
+    cursor: pointer;
   }
   
   .task label{

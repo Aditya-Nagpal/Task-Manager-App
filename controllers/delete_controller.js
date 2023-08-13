@@ -17,9 +17,12 @@ var taskList=[
     }
 ]
 
-module.exports.home=function (req,res){
-    return res.render('home',{
-        title: "My ToDo App",
-        task_list: taskList
-    });
-};
+module.exports.delete=function (req,res){
+    // for(let task of taskList){
+    //     let Input=document.getElementById(task.description);
+    //     if(Input.checked == true){
+    //         console.log(Input);
+    //     }
+    // }
+    return res.redirect('back');
+}
