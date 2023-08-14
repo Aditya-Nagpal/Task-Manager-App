@@ -1,15 +1,24 @@
 :root{
     --form-border-color: lightgrey;
   }
-  
+ 
   body{
     margin: 0;
+    background-color: lightgray;
+    overflow: hidden;
   }
   
   main{
+    height: 99.05vh;
     width: 64vw;
-    border: 1px solid var(--form-border-color);
+    border: 4px solid black;
     margin: auto;
+    background-color: white;
+    overflow: scroll;
+  }
+
+  main::-webkit-scrollbar{
+    display: none;
   }
   
   h1{
@@ -71,6 +80,10 @@
   
   .form-input:focus{
     outline: none;
+  }
+  
+  .form-input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 40px #d4e9f1 inset !important;
   }
   
   #btn{

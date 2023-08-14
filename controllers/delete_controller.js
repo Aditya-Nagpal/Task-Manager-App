@@ -7,7 +7,7 @@ module.exports.delete=async function (req,res){
         if(typeof taskIds === "string"){
             await Task.findByIdAndDelete(taskIds);
         }
-        else{
+        else if(typeof taskIds === "object"){
             for(let taskId of taskIds){
                 await Task.findByIdAndDelete(taskIds);
             }
