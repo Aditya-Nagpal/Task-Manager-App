@@ -4,8 +4,13 @@ const Task=require('../models/task');
 module.exports.delete=async function (req,res){
     try {
         let taskIds=req.body.check;
-        for(let taskId of taskIds){
-            await Task.findByIdAndDelete(taskId);
+        if(typeof taskIds === "string"){
+            await Task.findByIdAndDelete(taskIds);
+        }
+        else{
+            for(let taskId of taskIds){
+                await Task.findByIdAndDelete(taskIds);
+            }
         }
         return res.redirect('back');
     } catch (error) {

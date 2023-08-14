@@ -43,29 +43,20 @@
       </form>
 
       <form id="delete-form" action="/delete-task" method="POST">
-      <ul id="list">
-        <li class="task">
-          <input type="checkbox" name="check">
-          <label for="check">
-            <div class="task-title">
-              <p>Why not add a task?</p>
-              <p><i class="fa-regular fa-calendar-days"></i>&emsp;june 12, 2023</p>
-            </div>
-          </label>
-        </li>
-        <% for(let task of task_list){ %>
-          <li class="task">
-              <input type="checkbox" name="check" value="<%= task._id  %>">
-              <label for="check">
-                <div class="task-title">
-                  <p><%= task.description %></p>
-                  <p><i class="fa-regular fa-calendar-days"></i>&emsp;<%= month[task.date.getMonth()] %> <%= task.date.getDate() %>, <%=  task.date.getFullYear()  %></p>
-                </div>
-              </label>
-            <div class="cate-card" style="background-color: <%= btncolor[task.category] %>;"><%= task.category %></div>
-          </li>
-        <% } %>
-      </ul>
+        <ul id="list">
+          <% for(let task of task_list){ %>
+            <li class="task">
+                <input type="checkbox" name="check" value="<%= task._id  %>">
+                <label for="check">
+                  <div class="task-title">
+                    <p><%= task.description %></p>
+                    <p><i class="fa-regular fa-calendar-days"></i>&emsp;<%= month[task.date.getMonth()] %> <%= task.date.getDate() %>, <%=  task.date.getFullYear()  %></p>
+                  </div>
+                </label>
+              <div class="cate-card" style="background-color: <%= btncolor[task.category] %>;"><%= task.category %></div>
+            </li>
+          <% } %>
+        </ul>
       </form>
     </main>
 

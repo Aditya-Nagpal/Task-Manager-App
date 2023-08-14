@@ -6,7 +6,7 @@ const btncolor={
     Work: "red",
     School: "green",
     Cleaning: "purple",
-    Other: "skyblue"
+    Other: "transparent"
 };
 module.exports.home=async function (req,res){
     try {
