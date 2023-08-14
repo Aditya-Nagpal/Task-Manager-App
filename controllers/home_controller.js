@@ -1,4 +1,3 @@
-// let taskList=[];
 const db=require('../config/mongoose');
 const Task=require('../models/task');
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];

@@ -1,28 +1,15 @@
-var taskList=[
-    {
-        "description": "water plants",
-        "category": "Personal"
-    },
-    {
-        "description": "Do homework",
-        "category": "Work"
-    },
-    {
-        "description": "Play",
-        "category": "Personal"
-    },
-    {
-        "description": "Sleep",
-        "category": "Personal"
-    }
-]
+const db=require('../config/mongoose');
+const Task=require('../models/task');
 
-module.exports.delete=function (req,res){
-    for(let task of taskList){
-        let Input=document.getElementById(task.description);
-        if(Input.checked == true){
-            console.log(Input);
+module.exports.delete=async function (req,res){
+    try {
+        let taskIds=req.body.check;
+        for(let taskId of taskIds){
+            await Task.findByIdAndDelete(taskId);
         }
+        return res.redirect('back');
+    } catch (error) {
+        console.log("Error in deleting contact.",error);
+        return;
     }
-    return res.redirect('back');
 }

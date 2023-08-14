@@ -35,15 +35,14 @@
             <i class="fa-solid fa-plus"></i>
             <p>add task</p>
           </button>
-          <button class="btn" disabled style="padding: 0;  background-color: red;">
-            <a href="/delete-task" style="width: 98.4%;">
-              <i class="fa-solid fa-trash-can"></i>
-              <p>delete tasks</p>
-            </a>
+          <button form="delete-form" class="btn" style="padding: 0;  background-color: red;">
+            <i class="fa-solid fa-trash-can"></i>
+            <p>delete tasks</p>
           </button>
         </div>
       </form>
 
+      <form id="delete-form" action="/delete-task" method="POST">
       <ul id="list">
         <li class="task">
           <input type="checkbox" name="check">
@@ -53,21 +52,21 @@
               <p><i class="fa-regular fa-calendar-days"></i>&emsp;june 12, 2023</p>
             </div>
           </label>
-          <!-- <div class="cate-card">Personal</div> -->
         </li>
         <% for(let task of task_list){ %>
           <li class="task">
-            <input type="checkbox" name="check">
-            <label for="check">
-              <div class="task-title">
-                <p><%= task.description %></p>
-                <p><i class="fa-regular fa-calendar-days"></i>&emsp;<%= month[task.date.getMonth()] %> <%= task.date.getDate() %>, <%=  task.date.getFullYear()  %></p>
-              </div>
-            </label>
+              <input type="checkbox" name="check" value="<%= task._id  %>">
+              <label for="check">
+                <div class="task-title">
+                  <p><%= task.description %></p>
+                  <p><i class="fa-regular fa-calendar-days"></i>&emsp;<%= month[task.date.getMonth()] %> <%= task.date.getDate() %>, <%=  task.date.getFullYear()  %></p>
+                </div>
+              </label>
             <div class="cate-card" style="background-color: <%= btncolor[task.category] %>;"><%= task.category %></div>
           </li>
         <% } %>
       </ul>
+      </form>
     </main>
 
     <script src="script.js"></script>
